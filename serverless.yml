@@ -1,20 +1,44 @@
+# Meta dados do seu servico, o nome daque vai estar no deploy
 service:
-  name: udemy_serverless_aws
-
+  name: udemyServerlessAws
+# Plugins para rodar sua aplicacao
 plugins:
   - serverless-bundle
   - serverless-pseudo-parameters
-
+# provedor que vai rodar sua app
 provider:
   name: aws
   runtime: nodejs12.x
   memorySize: 256
+  # variavel - se variavel for undefined use a dev.
   stage: ${opt:stage, 'dev'}
-  
+  region: us-east-1
+  # ENV
+  environment:
+    # VARIAVEL
+    AUCTIONS_TABLE_NAME: ${self:custom.AuctionsTable.name}
+  # Passar permissoes de acesso, sem precisar mexer no painel.
+  iamRoleStatements:
+    - ${file(iam/AuctionsTableIAM.yml):AuctionsTableIAM}
+# Criar o banco de dados DynamoDB por aq.
+resources:
+  # cloudformation Resources
+  Resources:
+    # logic ID, da tabela
+    AuctionsTable: ${file(resources/AuctionsTable.yml):AuctionsTable}
+
 functions:
-  hello:
-    handler: src/handlers/hello.handler
+  createAuction:
+    handler: src/handlers/createAuction.handler
+    # eventos que vao disparar essa funcao.
     events:
       - http:
-          method: GET
-          path: /hello
+          method: POST
+          path: /auction
+# custom bundle para desativar o esLint.
+custom:
+  AuctionsTable:
+    name: !Ref AuctionsTable
+    arn: !GetAtt AuctionsTable.Arn
+  bundle:
+    linting: false

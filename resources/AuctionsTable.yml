@@ -1,0 +1,15 @@
+AuctionsTable:
+  Type: AWS::DynamoDB::Table
+  Properties:
+    # self para vc referenciar a essa tabela.
+    TableName: AuctionsTable-${self:provider.stage}
+    BillingMode: PAY_PER_REQUEST
+    # Atributos que estaram em cada item da tabela.
+    # type como strind, number, etc.
+    AttributeDefinitions:
+      - AttributeName: id
+        AttributeType: S
+    # key schema - fla para ser a chave primaria, com ela q ele forma o id.
+    KeySchema:
+      - AttributeName: id
+        KeyType: HASH

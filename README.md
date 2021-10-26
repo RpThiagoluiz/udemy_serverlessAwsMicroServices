@@ -4,6 +4,8 @@
 
 ## Getting started
 
+Clone the repo:
+
 ```
-Clone the repo: yarn start.
+ yarn install.
 ```

@@ -35,6 +35,30 @@ functions:
       - http:
           method: POST
           path: /auction
+  getAuctions:
+    handler: src/handlers/getAuctions.handler
+    # eventos que vao disparar essa funcao.
+    events:
+      - http:
+          method: GET
+          path: /auctions
+  getAuction:
+    handler: src/handlers/getAuction.handler
+    # eventos que vao disparar essa funcao.
+    events:
+      - http:
+          method: GET
+          # avisar o server q o path vai ser /auction/{id}
+          path: /auction/{id}
+  placeBid:
+    handler: src/handlers/placeBid.handler
+    # eventos que vao disparar essa funcao.
+    events:
+      - http:
+          # Patch, o bid esta como uma propriedade do auction
+          method: PATCH
+          # avisar o server q o path vai ser /auction/{id}
+          path: /auction/{id}/bid
 # custom bundle para desativar o esLint.
 custom:
   AuctionsTable:

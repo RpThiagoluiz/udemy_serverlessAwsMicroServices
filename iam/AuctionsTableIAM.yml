@@ -2,6 +2,11 @@ AuctionsTableIAM:
   Effect: Allow
   Action:
     - dynamodb:PutItem
+    - dynamodb:Scan
+    - dynamodb:GetItem
+    - dynamodb:UpdateItem
+    - dynamodb:DeleteItem
+    - dynamodb:PatchItem
   Resource:
     - ${self:custom.AuctionsTable.arn}
     # - arn:aws:dynamodb:#{aws:region}:#{aws:accountId}:table/AuctionsTable

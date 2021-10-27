@@ -1048,6 +1048,35 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
+"@middy/core@^2.5.2":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@middy/core/-/core-2.5.2.tgz#632985cba3a3a66548cc6bb0960efd49b9e2e5d5"
+  integrity sha512-Nho5E/2e8d9GSPr6IcQXV060lgwOgI2xPocdgjSJhtdkOKjy4vpGEFP7LNU8snUjZJyjDWI01hfq1Dy06lmNNw==
+
+"@middy/http-error-handler@^2.5.2":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@middy/http-error-handler/-/http-error-handler-2.5.2.tgz#f893ecd97b864a32aebd30bd207e9f318fd6ab2a"
+  integrity sha512-F+Pd94Ta1XMJmK0RZBpqnA2RZKxxdIEskjTxzrOWXerj9ic6i81brdtQFMSPYSbAcA8eT2NdRTECXlVoevUe9g==
+  dependencies:
+    "@middy/util" "^2.5.2"
+
+"@middy/http-event-normalizer@^2.5.2":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@middy/http-event-normalizer/-/http-event-normalizer-2.5.2.tgz#ed83db3a23539eb0ad809bad254e43930429f040"
+  integrity sha512-TObmoxO6C9/fUHBdkkV6xr0cBLi2LHXeegx7oqsFa/ywnts/Q7pfihmSmKqXoLoIrkvHkIUFI5RepWozzH0dmg==
+
+"@middy/http-json-body-parser@^2.5.2":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@middy/http-json-body-parser/-/http-json-body-parser-2.5.2.tgz#0b864aef27432ef79d9f833a2883b12ede17354e"
+  integrity sha512-gIbOklHnWQ1AHq9V8BGYel1ljQTx1jJANmVwgsyPlFZFjZqCt5phVuRYVdl3h/ZPzfqpz7r2hRV3IbN6orkh4g==
+  dependencies:
+    "@middy/util" "^2.5.2"
+
+"@middy/util@^2.5.2":
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/@middy/util/-/util-2.5.2.tgz#c4649d09687fc405fe24070ac678fff08e4f0ba9"
+  integrity sha512-dFvCbWqxpjtBCOTTguTSLCJC5FwoIC125G9f+Nl+4hAXwV2sNwZ7g0GH3T6MIvxjkHeqFYMxUm3ePjGTEYyxGg==
+
 "@tsconfig/node10@^1.0.7":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@tsconfig/node10/-/node10-1.0.8.tgz#c1e4e80d6f964fbecb3359c43bd48b40f7cadad9"
@@ -3146,6 +3175,11 @@ delegates@^1.0.0:
   resolved "https://registry.yarnpkg.com/delegates/-/delegates-1.0.0.tgz#84c6e159b81904fdca59a0ef44cd870d31250f9a"
   integrity sha1-hMbhWbgZBP3KWaDvRM2HDTElD5o=
 
+depd@~1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
+  integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
+
 des.js@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/des.js/-/des.js-1.0.1.tgz#5382142e1bdc53f85d86d53e5f4aa7deb91e0843"
@@ -4178,6 +4212,17 @@ html-escaper@^2.0.0:
   resolved "https://registry.yarnpkg.com/html-escaper/-/html-escaper-2.0.2.tgz#dfd60027da36a36dfcbe236262c00a5822681453"
   integrity sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==
 
+http-errors@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.8.0.tgz#75d1bbe497e1044f51e4ee9e704a62f28d336507"
+  integrity sha512-4I8r0C5JDhT5VkvI47QktDW75rNlGVsUf/8hzjCC/wkWI/jdTRmBb9aI7erSG82r1bjKY3F6k28WnsVxB1C73A==
+  dependencies:
+    depd "~1.1.2"
+    inherits "2.0.4"
+    setprototypeof "1.2.0"
+    statuses ">= 1.5.0 < 2"
+    toidentifier "1.0.0"
+
 http-signature@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/http-signature/-/http-signature-1.2.0.tgz#9aecd925114772f3d95b65a60abb8f7c18fbace1"
@@ -4282,7 +4327,7 @@ inflight@^1.0.4:
     once "^1.3.0"
     wrappy "1"
 
-inherits@2, inherits@^2.0.1, inherits@^2.0.3, inherits@^2.0.4, inherits@~2.0.0, inherits@~2.0.1, inherits@~2.0.3:
+inherits@2, inherits@2.0.4, inherits@^2.0.1, inherits@^2.0.3, inherits@^2.0.4, inherits@~2.0.0, inherits@~2.0.1, inherits@~2.0.3:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
@@ -7014,6 +7059,11 @@ setimmediate@^1.0.4:
   resolved "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
   integrity sha1-KQy7Iy4waULX1+qbg3Mqt4VvgoU=
 
+setprototypeof@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.2.0.tgz#66c9a24a73f9fc28cbe66b09fed3d33dcaf1b424"
+  integrity sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==
+
 sha.js@^2.4.0, sha.js@^2.4.8:
   version "2.4.11"
   resolved "https://registry.yarnpkg.com/sha.js/-/sha.js-2.4.11.tgz#37a5cf0b81ecbc6943de109ba2960d1b26584ae7"
@@ -7248,6 +7298,11 @@ static-extend@^0.1.1:
   dependencies:
     define-property "^0.2.5"
     object-copy "^0.1.0"
+
+"statuses@>= 1.5.0 < 2":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
+  integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
 
 stdout-stream@^1.4.0:
   version "1.4.1"
@@ -7604,6 +7659,11 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     extend-shallow "^3.0.2"
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
+
+toidentifier@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
+  integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
 
 tough-cookie@^2.3.3, tough-cookie@^2.3.4, tough-cookie@~2.5.0:
   version "2.5.0"
